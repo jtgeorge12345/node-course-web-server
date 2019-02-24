@@ -37,6 +37,15 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/projects", (req, res) => {
+  // res.send("<h1>Hello Express</h1>");
+  res.render('projects.hbs', {
+    pageTitle:"Projects",
+    currentYear: new Date().getFullYear(),
+    projectsText:"No projects yet."
+  });
+});
+
 app.get('/about', (req, res) => {
   res.render('about.hbs', {
     pageTitle: "About Page",
